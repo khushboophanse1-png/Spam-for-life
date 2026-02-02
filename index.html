@@ -105,10 +105,11 @@
         newX = randomInt(0, maxX);
         newY = randomInt(0, maxY);
         tries++;
-      } while (e && Math.abs(e.clientX - (container.getBoundingClientRect().left + newX + noBtn.offsetWidth/2)) < 80 
-            && Math.abs(e.clientY - (container.getBoundingClientRect().top + newY + noBtn.offsetHeight/2)) < 80 
-            && tries < 30);
-
+      } while (
+        e && Math.abs(e.clientX - (container.getBoundingClientRect().left + newX + noBtn.offsetWidth/2)) < 80 &&
+        Math.abs(e.clientY - (container.getBoundingClientRect().top + newY + noBtn.offsetHeight/2)) < 80 &&
+        tries < 30
+      );
       noBtn.style.left = newX + 'px';
       noBtn.style.top = newY + 'px';
     }
