@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin-top: 100px;
+    }
+    #container {
+      position: relative;
+      height: 200px;
+      width: 400px;
+      margin: auto;
+    }
+    #yes, #no {
+      padding: 14px 28px;
+      margin: 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+      position: absolute;
+    }
+    #yes {
+      left: 100px;
+      top: 80px;
+      background: #66bb6a;
+    }
+    #no {
+      left: 200px;
+      top: 80px;
+      background: #e57373;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my valentine?</h1>
+  <div id="container">
+    <button id="yes" onclick="window.location.href='love.html'">Yes</button>
+    <button id="no">No</button>
+  </div>
+  <script>
+    const noBtn = document.getElementById('no');
+    noBtn.addEventListener('mouseenter', function() {
+      // Move the button to a random position inside the container
+      const container = document.getElementById('container');
+      const maxX = container.offsetWidth - noBtn.offsetWidth;
+      const maxY = container.offsetHeight - noBtn.offsetHeight;
+      const newX = Math.floor(Math.random() * maxX);
+      const newY = Math.floor(Math.random() * maxY);
+      noBtn.style.left = newX + 'px';
+      noBtn.style.top = newY + 'px';
+    });
+  </script>
+</body>
+</html>
